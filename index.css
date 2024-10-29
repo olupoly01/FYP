@@ -1,0 +1,189 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* Full-page background */
+.background {
+    background-image: url('https://wpcdn.us-midwest-1.vip.tn-cloud.net/www.charlotteparent.com/content/uploads/data-import/32df2ca6/shutterstock_150378902.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: #e2e8d4;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Dark overlay to improve text visibility */
+.background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(39, 61, 42, 0.7);
+    z-index: 1;
+}
+
+/* Fade-in effect for content */
+.content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content h1 {
+    font-size: 35px;
+    margin-bottom: 20px;
+    color: #e2e8d4;
+    font-weight: 500;
+}
+
+.content p {
+    font-size: 16px;
+    font-weight: 100px;
+    margin-bottom: 40px;
+    color: #d5dec8;
+    line-height: 1.6;
+}
+
+/* Button styling */
+.btn-group {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-group a {
+    background-color: #273d2a;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-group a:hover {
+    background-color: #3e5740;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Styling for the login button in the top-right */
+.login-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    z-index: 3;
+}
+
+.login-btn a {
+    background-color: #273d2a;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.login-btn a:hover {
+    background-color: #3e5740;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+    .content h1 {
+        font-size: 32px;
+    }
+
+    .btn-group {
+        flex-direction: column;
+    }
+
+    .btn-group a {
+        margin-bottom: 15px;
+    }
+}
+
+/* Additional background animations for subtle effect */
+.background .bubble {
+    position: absolute;
+    bottom: -50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    opacity: 0.4;
+    animation: float 8s infinite ease-in-out;
+}
+
+.background .bubble:nth-child(1) {
+    width: 80px;
+    height: 80px;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.background .bubble:nth-child(2) {
+    width: 100px;
+    height: 100px;
+    left: 40%;
+    animation-delay: 2s;
+}
+
+.background .bubble:nth-child(3) {
+    width: 60px;
+    height: 60px;
+    left: 60%;
+    animation-delay: 4s;
+}
+
+.background .bubble:nth-child(4) {
+    width: 120px;
+    height: 120px;
+    left: 80%;
+    animation-delay: 6s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        opacity: 0.4;
+    }
+    50% {
+        transform: translateY(-80px);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0.4;
+    }
+}

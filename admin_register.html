@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Registration Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin_register.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-links">
+            <button onclick="window.location.href='index.html'">Home</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Admin Registration</h2>
+        <form id="adminRegistrationForm" method="POST">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter a username" required>
+                    <div class="error-message" id="usernameError">Username is required</div>
+                </div>
+                <div class="form-group">
+                    <label for="faculty">Faculty</label>
+                    <input type="text" id="faculty" name="faculty" placeholder="Enter your faculty" required>
+                    <div class="error-message" id="facultyError">Faculty is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="adminPassword">Admin Registration Password</label>
+                <input type="password" id="adminPassword" name="adminPassword" placeholder="Enter admin password" required>
+                <div class="error-message" id="adminPasswordError">Password is required</div>
+            </div>
+            <button type="submit" id="submitBtn">Submit</button>
+            <p class="loading" id="loadingText">Submitting...</p>
+            <p class="success-message" id="successMessage">Registration successful! Redirecting to the homepage...</p>
+        </form>
+    </div>
+
+    <script src="admin_register.js"></script>
+    </body>
+</html>

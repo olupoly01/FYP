@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission Output</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .output-container {
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .output-item {
+            margin: 15px 0;
+            text-align: left;
+        }
+        .output-item label {
+            font-weight: bold;
+            color: #555;
+        }
+        .output-item span, .output-item img {
+            display: block;
+            margin-top: 5px;
+            color: #333;
+        }
+        .course-list {
+            list-style-type: decimal;
+            padding-left: 20px;
+        }
+        .feedback-message {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e0f7fa;
+            color: #00796b;
+            border-radius: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="output-container">
+    <h1>Form Submission Output</h1>
+
+    <!-- Display Full Name -->
+    <div class="output-item">
+        <label>Full Name:</label>
+        <span id="outputName">Loading...</span>
+    </div>
+
+    <!-- Display Email -->
+    <div class="output-item">
+        <label>Email:</label>
+        <span id="outputEmail">Loading...</span>
+    </div>
+
+    <!-- Display Courses -->
+    <div class="output-item">
+        <label>Courses (Minimum 9):</label>
+        <ul id="outputCourses" class="course-list">Loading...</ul>
+    </div>
+
+    <!-- Display Captured Image -->
+    <div class="output-item">
+        <label>Captured Image:</label>
+        <img id="outputImage" alt="Captured Image" width="200">
+    </div>
+
+    <!-- Feedback Message -->
+    <div id="feedbackMessage" class="feedback-message">Thank you for your submission!</div>
+</div>
+
+<script>
+// Simulating data retrieval after form submission
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Retrieve stored data (this could be from a server or backend)
+    const fullName = "John Doe";  // Example data
+    const courses = ["Math", "English", "Biology", "Physics", "Chemistry", "History", "Geography", "Art", "Computer Science"];
+    const imageSrc = "data:image/png;base64,/* base64 image data here */";  // Replace with actual base64 data
+
+    // Set output data
+    document.getElementById('outputName').innerText = fullName;
+    document.getElementById('outputEmail').innerText = email;
+    
+    const coursesList = document.getElementById('outputCourses');
+    coursesList.innerHTML = "";  // Clear placeholder text
+    courses.forEach(course => {
+        const li = document.createElement('li');
+        li.innerText = course;
+        coursesList.appendChild(li);
+    });
+
+    const outputImage = document.getElementById('outputImage');
+    outputImage.src = imageSrc;
+});
+</script>
+
+</body>
+</html>

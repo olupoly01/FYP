@@ -1,0 +1,91 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="student_register.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-links">
+            <button onclick="window.location.href='index.html'">Home</button>
+        </div>
+    </nav>
+    <div class="container" id="form-container">
+        <h2>Student Registration</h2>
+        <form id="registrationForm" method="POST" enctype="multipart/form-data">
+            <!-- Form fields section -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstname">First Name</label>
+                    <input type="text" id="firstname" name="firstname" placeholder="Enter first name" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" id="lastname" name="lastname" placeholder="Enter last name" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="matric">Matric Number</label>
+                    <input type="text" id="matric" name="matric" placeholder="Enter matric number" required>
+                </div>
+                <div class="form-group">
+                    <label for="faculty">Faculty</label>
+                    <input type="text" id="faculty" name="faculty" placeholder="Enter faculty" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <input type="text" id="department" name="department" placeholder="Enter department" required>
+                </div>
+                <div class="form-group">
+                    <label for="class">Class</label>
+                    <select id="class" name="class" required>
+                        <option value="" disabled selected>Choose option</option>
+                        <option value="ND1">ND1</option>
+                        <option value="ND2">ND2</option>
+                        <option value="HND1">HND1</option>
+                        <option value="HND2">HND2</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="courses">Courses Offered This Semester (Enter 9 or more courses)</label>
+                <textarea id="courses" name="courses" placeholder="Enter courses separated by commas" rows="4" required></textarea>
+                <span id="courseError" class="error-message">Please enter at least 9 courses separated by commas.</span>
+            </div>
+            <!-- Next Button -->
+            <button type="button" id="nextBtn">Next</button>
+        </form>
+    </div>
+
+    <!-- Camera section initially hidden -->
+    <div class="cam" id="camera-section" style="display: none;">
+        <h2>Take a Picture</h2>
+        <div class="media-container">
+            <video id="video" autoplay></video>
+            <canvas id="canvas"></canvas>
+        </div>
+        <button id="snap">Capture Photo</button>
+        <button id="recapture" style="display: none;">Recapture</button>
+        <form id="uploadForm" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="image" id="imageData">
+            <button type="submit" id="submitBtn" style="display: none;">Submit</button>
+        </form>
+        <p id="loadingMessage" class="loading">Submitting...</p> <!-- Submitting message -->
+    </div>
+
+    <!-- Feedback Modal -->
+    <div id="feedbackModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <p>Submitted Successfully!</p>
+        </div>
+    </div>
+<script src="student_register.js"></script>
+</body>
+</html>

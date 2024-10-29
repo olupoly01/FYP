@@ -1,0 +1,177 @@
+/* Reset and body setup */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #e8f5e9, #a5d6a7);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease;
+}
+
+h2 {
+    font-size: 24px;
+    color: #273D2A;
+    margin-bottom: 10px;
+}
+
+.instructions {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.navbar button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    z-index: 3;
+    background-color: #273d2a;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-size: 16px;
+    transition: all 0.4s ease;
+}
+
+.navbar button:hover {
+    background-color: #3e5740;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Circular scan area */
+.media-container {
+    position: relative;
+    width: 240px;
+    height: 240px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 6px solid #00420e;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 2s infinite;
+}
+
+video, canvas {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Scan button */
+button#scanBtn {
+    background-color: #273d2a;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    animation: bounce 2s infinite;
+}
+
+button#scanBtn:hover {
+    background-color: #00420e;
+    transform: scale(1.05);
+}
+
+#loadingMessage {
+    color: #d9534f;
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Logout button at bottom */
+.logout-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    z-index: 3;
+    bottom: 30px;
+    background-color: #273d2a;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #00420e;
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes pulse {
+    0%, 100% { border-color: #00420e; box-shadow: 0 0 12px rgba(0, 66, 14, 0.3); }
+    50% { border-color: #3e5740; box-shadow: 0 0 20px rgba(0, 66, 14, 0.6); }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .instructions {
+        font-size: 14px;
+    }
+
+    button#scanBtn, .logout-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}

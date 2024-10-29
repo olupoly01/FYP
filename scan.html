@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Verification Scan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="scan.css">
+</head>
+<body>
+    <nav class="navbar">
+        <button onclick="window.location.href='index.html'">Home</button>
+    </nav>
+
+    <div class="container animate-container">
+        <h2 class="animate-fade">Student Verification Scan</h2>
+        <p class="instructions animate-fade">Align the student’s face within the circle and click to scan.</p>
+
+        <div class="media-container animate-pulse">
+            <video id="video" autoplay></video>
+            <canvas id="canvas" style="display: none;"></canvas>
+        </div>
+        
+        <button id="scanBtn" onclick="capturePhoto()" class="animate-bounce">Scan Student</button>
+        <p id="loadingMessage" style="display: none;">Processing...</p>
+    </div>
+
+    <button onclick="window.location.href='login.html'" id="logoutBtn" class="logout-btn">Logout</button>
+
+    <script src="scan.js"></script>
+</body>
+</html>
