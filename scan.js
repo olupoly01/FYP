@@ -3,12 +3,13 @@ const canvas = document.getElementById('canvas');
 const loadingMessage = document.getElementById('loadingMessage');
 
 // Access the camera and stream to video element
-navigator.mediaDevices.getUserMedia({ video: true })
+navigator.mediaDevices.getUserMedia({ video: {facingMode:{exact: "environment"} })
     .then(stream => {
         video.srcObject = stream;
     })
     .catch(error => {
         console.error("Error accessing the camera: ", error);
+alert("Unable to access camera. Please check your camera permission.");
     });
 
 // Capture photo function
