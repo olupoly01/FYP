@@ -12,7 +12,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     transition: background 0.5s ease;
 }
 
@@ -56,7 +55,7 @@ nav {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     max-width: 600px;
     width: 90%;
-    margin: 20px;
+    margin: 30px 20px;
     animation: fadeIn 0.5s ease;
 }
 
@@ -152,6 +151,25 @@ textarea {
     font-style: italic;
 }
 
+input[type="file"] {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.95);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+input[type="file"]:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    display: none;
+    margin-top: 5px;
+}
+
 
 /* Button Styling */
 button {
@@ -224,7 +242,11 @@ button:active {
 
 
 /* Responsive Design */
-@media (max-width: 600px) {
+@media (max-width: 767px) {
+    .container {
+        margin-top: 70px;
+        margin-bottom: 50px;
+    }
     .form-row {
         flex-direction: column;
         gap: 15px;
@@ -238,38 +260,4 @@ button:active {
         padding: 10px;
     }
 }
-.cam {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
-    text-align: center;
-    position: relative;
-}
 
-/* Video and Canvas Circular Styling */
-.media-container {
-    position: relative;
-    display: inline-block;
-    width: 220px;
-    height: 220px;
-    margin-bottom: 20px;
-}
-
-video, canvas {
-    border-radius: 50%;
-    border: 4px solid #273d2a;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: none; /* Hidden initially */
-    z-index: 2;
-}

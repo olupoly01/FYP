@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,7 +16,6 @@
     <div class="container" id="form-container">
         <h2>Student Registration</h2>
         <form id="registrationForm" method="POST" enctype="multipart/form-data">
-            <!-- Form fields section -->
             <div class="form-row">
                 <div class="form-group">
                     <label for="firstname">First Name</label>
@@ -27,6 +26,11 @@
                     <input type="text" id="lastname" name="lastname" placeholder="Enter last name" required>
                 </div>
             </div>
+            <div class="form-group">
+                <label for="selfie">Upload a Selfie of Yourself</label>
+                <input type="file" id="selfie" name="selfie" accept="image/*" required>
+                <span id="selfieError" class="error-message">Please upload a selfie.</span>
+            </div>            
             <div class="form-row">
                 <div class="form-group">
                     <label for="matric">Matric Number</label>
@@ -58,34 +62,16 @@
                 <textarea id="courses" name="courses" placeholder="Enter courses separated by commas" rows="4" required></textarea>
                 <span id="courseError" class="error-message">Please enter at least 9 courses separated by commas.</span>
             </div>
-            <!-- Next Button -->
-            <button type="button" id="nextBtn">Next</button>
+            <button type="submit" id="submitBtn">Submit</button>
         </form>
+        <p id="loadingMessage" class="loading">Submitting...</p>
     </div>
-
-    <!-- Camera section initially hidden -->
-    <div class="cam" id="camera-section" style="display: none;">
-        <h2>Take a Picture</h2>
-        <div class="media-container">
-            <video id="video" autoplay></video>
-            <canvas id="canvas"></canvas>
-        </div>
-        <button id="snap">Capture Photo</button>
-        <button id="recapture" style="display: none;">Recapture</button>
-        <form id="uploadForm" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="image" id="imageData">
-            <button type="submit" id="submitBtn" style="display: none;">Submit</button>
-        </form>
-        <p id="loadingMessage" class="loading">Submitting...</p> <!-- Submitting message -->
-    </div>
-
-    <!-- Feedback Modal -->
     <div id="feedbackModal" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             <p>Submitted Successfully!</p>
         </div>
     </div>
-<script src="student_register.js"></script>
+    <script src="student_register.js"></script>
 </body>
 </html>

@@ -83,6 +83,7 @@ label {
 }
 
 input[type="text"],
+input[type="email"],
 input[type="password"] {
     padding: 12px;
     border: 1px solid #b0c4b1;
@@ -139,6 +140,9 @@ button:hover {
 }
 
 @media (max-width: 600px) {
+    .container {
+        margin: 0px 15px;
+    }
     .form-row {
         flex-direction: column;
     }
